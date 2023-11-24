@@ -1,0 +1,38 @@
+#Primzahlen berechnen
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+#Primzahlen mit obergrenze
+def is_prime(n):                  
+    for i in range(2, n):          
+        if (n % i == 0):           
+            return False
+    return True            
+
+#Zahlen umdrehen
+def reverse_number(num):
+    int_str = str(num)
+    reversed_str = int_str[::-1]
+    reversed_num = int(reversed_str)
+    return reversed_num
+
+#Anzahl Nummer zählen
+def count_ones(num):
+    num_str = str(num)
+    ones = num_str.count("1")
+    return ones
+
+#Quersumme
+def quersumme_berechnen(zahl):
+    zahl_str = str(zahl)
+    quersumme = 0
+    
+    for ziffer in zahl_str:
+        quersumme += int(ziffer)
+    
+    return quersumme
