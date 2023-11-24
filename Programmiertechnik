@@ -36,3 +36,37 @@ def quersumme_berechnen(zahl):
         quersumme += int(ziffer)
     
     return quersumme
+
+# Wir möchten als Erstes die Antwort finden, ob eine Zahl eine Null enthält.
+def is_zero(n):
+    for num in str(n):         # Wir iterieren durch eine Zahl, die wir mit str() zu einem String casten
+        if num == "0":         # und prüfen, ob der Character "0" enthalten ist.
+            return True        # Wenn das zutrifft, geben wir True zurück.
+    return False
+
+# Als Nächstes widmen wir uns der Quersumme. Wieder casten wir die gegebene Zahl in einen String. 
+def sum_digits(n):           # sum_of_digits hat eine Zahl n als Parameter.
+    my_sum = 0               # In my_sum speichern wir die Summe unserer Quersummenberechnung.
+    for digit in str(n):         # In der For-Loop wird zB die Zahl 542 in 5, 4 und 2 zerlegt.
+        my_sum += int(digit)     # Die Zahl i wird wieder in ein Integer umgewandelt und zu my_sum hinzuaddiert.
+    return my_sum            # Am Ende geben wir die Summe von z.B. 5 + 4 + 2 = 11 zurück.
+
+#Mirp Zahlen
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def is_mirp(n):
+    return is_prime(n) and is_prime(int(str(n)[::-1]))
+
+def count_ones(n):
+    return str(n).count("1")
+
+def M(start, end):
+    for i in range(start, end + 1):
+        if is_mirp(i) and count_ones(i) == 2:
+            yield i
