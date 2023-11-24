@@ -27,7 +27,7 @@ def count_ones(num):
     ones = num_str.count("1")
     return ones
 
-#Quersumme
+#Quersummen
 def quersumme_berechnen(zahl):
     zahl_str = str(zahl)
     quersumme = 0
